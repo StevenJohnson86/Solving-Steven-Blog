@@ -1,0 +1,27 @@
+header {
+  background-color: lightgray;
+  margin:
+}
+
+
+.main-nav ul {
+  list-style-type: none;
+  display: none;
+}
+
+.main-nav:hover ul {
+  display: block;
+}
+
+
+@media screen and (min-width: 600px) {
+  .main-nav ul {
+    display: block;
+  }
+  .main-nav li {
+    display: inline;
+  }
+  .icon-menu {
+    display: none;
+  }
+}
