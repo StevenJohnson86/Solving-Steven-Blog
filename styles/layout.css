@@ -1,14 +1,4 @@
-.main-nav ul {
-  display: block;
-}
 
-.main-nav li {
-  
-}
-
-
-
-
-@media screen and (min-width: 600px) {
-
+img {
+  max-width: 100%;
 }
