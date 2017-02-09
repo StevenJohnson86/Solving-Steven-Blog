@@ -1,6 +1,6 @@
 header {
   background-color: lightgray;
-  margin:
+  height: 3em;
 }
 
 
@@ -11,8 +11,8 @@ header {
 
 .main-nav:hover ul {
   display: block;
+  background-color: lightgray;
 }
-
 
 @media screen and (min-width: 600px) {
   .main-nav ul {
