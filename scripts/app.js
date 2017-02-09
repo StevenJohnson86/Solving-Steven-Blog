@@ -1,11 +1,13 @@
 'use strict';
 
-function Project (title, descript, img, path, datePublished) {
-  this.title = title;
-  this.descript = descript;
-  this.img = img;
-  this.path = path;
-  this.datePublished = datePublished;
+var projects= [];
+
+function Project (options) {
+  this.title = options.title;
+  this.descript = options.descript;
+  this.img = options.img;
+  this.path = options.path;
+  this.datePublished = options.datePublished;
 }
 
 // function BlogEntry (title, content) {
@@ -13,3 +15,7 @@ function Project (title, descript, img, path, datePublished) {
 //   this.content = content;
 //   //add timeDate prototype
 // }
+
+projectData.forEach(function (projObj) {
+  projects.push(new Project(projObj));
+})
