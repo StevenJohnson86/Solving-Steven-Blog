@@ -19,3 +19,12 @@ function Project (options) {
 projectData.forEach(function (projObj) {
   projects.push(new Project(projObj));
 })
+
+Project.prototype.toHtml = function () {
+  var $newProject = $('div.template').clone();
+  $newProject.removeClass('template');
+
+  // if($newProject) {
+    // finish later
+  }
+}
