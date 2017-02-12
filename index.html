@@ -28,25 +28,37 @@
     </header>
 
     <main class="content">
-      <div class="description">
-        <h2>Description of page here</h2>
-      </div>
-
-      <div class="template">
-        <img src=""/>
-        <div class="project-content">
-          <h3>Title</h3>
-          <p>Project description</p>
-          <p class="date">Date Published</p>
+      <section id="home-content">
+        <div class="description">
+          <h2>Description of page here</h2>
         </div>
-      </div>
+      </section>
 
-      <div>
-        <p>Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content </p>
-      </div>
+      <section id="projects-content">
+        <div class="template">
+          <a href="" target="_blank"><img src=""/>
+          <div class="project-details">
+            <h3>Title</h3>
+            <p class="description">Project description</p>
+            <p class="date">Date Published</p></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about-content">
+        <div>
+          <p>about me blurb</p>
+          <ul class="social">
+            <li><a href="#" class="icon-twitter">Twitter</a></li>
+            <li><a href="#" class="icon-github">Github</a></li>
+            <li><a href="#" class="icon-linkedin">linkedIn</a></li>
+            <li ><a href="#" class="icon-mail">Email</a></li>
+            <li>others?</li>
+        </div>
+      </section>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="scripts/projectData.js"></script>
-    <script src="scripts/app.js"></script>
+    <script src="scripts/projects.js"></script>
   </body>
 </html>

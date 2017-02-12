@@ -24,7 +24,18 @@ Project.prototype.toHtml = function () {
   var $newProject = $('div.template').clone();
   $newProject.removeClass('template');
 
-  // if($newProject) {
-    // finish later
-  }
+  // if(!ternary waat?) what is class draft, why is it in lab? for articles without a pub date?
+  $newProject.find('img').attr('src', this.img);
+  $newProject.find('a').attr('href', this.path);
+  $newProject.find('h3').text(this.title);
+  $newProject.find('p.description').text(this.descript);
+  $newProject.find('p.date').text(this.datePublished);
+
+  return $newProject;
 }
+
+projects.forEach(function (p) {
+  $('#projects-content').append(p.toHtml());
+
+
+})
