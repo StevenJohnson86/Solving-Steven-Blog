@@ -11,7 +11,7 @@ var projectData = [
   {
     title: 'Cookie Stand',
     descript: 'The second project I did from week 2 of CodeFellows 201 is an app working with problem domain and a hypothetical \'SalmonCookies\' company.',
-    img: '../imgs/salmon.png',
+    img: '../imgs/SalmonCookie.jpg',
     path: 'https://stevenjohnson86.github.io/cookie-stand/',
     datePublished: '2017-01-16'
   },

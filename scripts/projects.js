@@ -23,6 +23,7 @@ projectData.forEach(function (projObj) {
 Project.prototype.toHtml = function () {
   var $newProject = $('div.template').clone();
   $newProject.removeClass('template');
+  $newProject.attr('class', 'public-project');
 
   // if(!ternary waat?) what is class draft, why is it in lab? for articles without a pub date?
   $newProject.find('img').attr('src', this.img);

@@ -14,10 +14,13 @@ header {
   background-color: lightgray;
 }
 
-/*.projects-content img {
-  height: 5em;
-  width: 3em;
-}*/
+#projects-content img {
+ float:left;
+ height:100%;
+ width: 14em;
+}
+
+
 
 @media screen and (min-width: 600px) {
   .main-nav ul {
