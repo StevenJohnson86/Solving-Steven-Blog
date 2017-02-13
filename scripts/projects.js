@@ -8,6 +8,7 @@ function Project (options) {
   this.img = options.img;
   this.path = options.path;
   this.datePublished = options.datePublished;
+  this.category = options.category;
 }
 
 // function BlogEntry (title, content) {
@@ -24,6 +25,7 @@ Project.prototype.toHtml = function () {
   var $newProject = $('div.template').clone();
   $newProject.removeClass('template');
   $newProject.attr('class', 'public-project');
+  $newProject.attr('data-title', this.title);
 
   // if(!ternary waat?) what is class draft, why is it in lab? for articles without a pub date?
   $newProject.find('img').attr('src', this.img);
