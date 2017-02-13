@@ -5,15 +5,54 @@
 
 /*------------------------TEXT STYLES------------------------------------------*/
 
+/*font-family: 'Monda', sans-serif;
+font-family: 'Philosopher', sans-serif;
+font-family: 'Rajdhani', sans-serif;
+font-family: 'Days One', sans-serif;*/
+
+/*color scheme
+#5E6C6B border
+#1F2018 bg
+#ACB3A8 text
+#5D6359  darker text?
+#2A3534 nav bg
+#55593F other?*/
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, li, a, span {
+  color: #ACB3A8;
+}
+
 h1 {
   font-size: 2em;
+  font-family: 'Days One', sans-serif;
 }
 
 h2 {
   font-size: 1.6em;
+  font-family: 'Monda', sans-serif;
 }
 
 p {
   font-size: 1em;
-  font-family: sans-serif;
+  font-family: 'Monda', sans-serif;
+}
+
+li {
+  font-size: 1em;
+  text-decoration: none;
+  font-family: 'Monda', sans-serif;
+}
+
+a {
+  font-size: 1em;
+  text-decoration: none;
+  font-family: 'Monda', sans-serif;
+}
+/*--------------Background styles-----------------*/
+
+body {
+  background-color: #1F2018;
+}
+
+header {
+  background-color: #2A3534;
 }
