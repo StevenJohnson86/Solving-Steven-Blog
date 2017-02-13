@@ -6,8 +6,11 @@ projectView.populateFilter = function () {
   $('.public-project').each(function(){
     var title, optionTag;
     title = $(this).find('h3').text();
-    optionTag = '<option value="' + title + '">' + title + '</option>';
-    $('#title-filter').append(optionTag);
+    optionTag = `<option value="${title}">${title}</option>`;
+
+    if ($(`#title-filter option[value="${title}"]`).length === 0) {
+      $('#title-filter').append(optionTag);
+    }
   });
 }
 
@@ -18,7 +21,7 @@ projectView.handleTitleFilter = function() {
       $('div[data-title = "' + $(this).val() + '"]').fadeIn();
     } else {
       $('.public-project').fadeIn();
-    };
+    }
   });
 }
 
@@ -31,7 +34,8 @@ projectView.handleNav = function () {
 };
 
 //-------------function calls-------------------------
-
-projectView.populateFilter();
-projectView.handleTitleFilter();
-projectView.handleNav();
+$(document).ready(function() {
+  projectView.populateFilter();
+  projectView.handleTitleFilter();
+  projectView.handleNav();
+});

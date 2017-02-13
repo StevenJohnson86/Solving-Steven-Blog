@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="/styles/state.css">
     <link rel="stylesheet" href="/styles/icons.css">
     <title>Solving-Steven-Blog</title>
+    <script id="project-template" type="text/x-handlebars-template">
+      <div class="public-project" data-title="{{title}}">
+        <a href="{{path}}" target="_blank"><img src="{{img}}"/>
+        <div class="project-details">
+          <h3>{{title}}</h3>
+          <p class="description">{{descript}}</p>
+          <p class="date">{{datePublished}}</p></a>
+        </div>
+      </div>
+    </script>
   </head>
   <body>
     <header>
@@ -39,18 +49,10 @@
       </section>
 
       <section id="projects-content">
-        <div class="template" data-title="">
-          <a href="" target="_blank"><img src=""/>
-          <div class="project-details">
-            <h3>Title</h3>
-            <p class="description">Project description</p>
-            <p class="date">Date Published</p></a>
-          </div>
-        </div>
-
         <div>
           <select id="title-filter">
             <option value=""> -Find Project by Title- </option>
+          </select>
         </div>
       </section>
 
@@ -61,12 +63,14 @@
             <li><a href="#" class="icon-twitter">Twitter</a></li>
             <li><a href="#" class="icon-github">Github</a></li>
             <li><a href="#" class="icon-linkedin">linkedIn</a></li>
-            <li ><a href="#" class="icon-mail">Email</a></li>
+            <li><a href="#" class="icon-mail">Email</a></li>
             <li>others?</li>
+          </ul>
         </div>
       </section>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
     <script src="scripts/projectData.js"></script>
     <script src="scripts/projects.js"></script>
     <script src="scripts/projectView.js"></script>
