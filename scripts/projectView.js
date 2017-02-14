@@ -33,6 +33,12 @@ projectView.handleNav = function () {
   });
 };
 
+projectView.initIndex = function () {
+  Project.all.forEach(function (p) {
+    $('#projects-content').append(p.toHtml());
+  });
+}
+
 //-------------function calls-------------------------
 $(document).ready(function() {
   projectView.populateFilter();

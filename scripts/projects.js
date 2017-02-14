@@ -1,7 +1,5 @@
 'use strict';
 
-var projects= [];
-
 function Project (options) {
   this.title = options.title;
   this.descript = options.descript;
@@ -11,15 +9,13 @@ function Project (options) {
   this.category = options.category;
 }
 
+Project.all = [];
+
 // function BlogEntry (title, content) {
 //   this.title = title;
 //   this.content = content;
 //   //add timeDate prototype
 // }
-
-projectData.forEach(function (projObj) {
-  projects.push(new Project(projObj));
-})
 
 Project.prototype.toHtml = function () {
   var source = $('#project-template').html();
@@ -27,6 +23,12 @@ Project.prototype.toHtml = function () {
   return templateRender(this);
 }
 
-projects.forEach(function (p) {
-  $('#projects-content').append(p.toHtml());
-});
+Project.loadAll = function(projectData) {
+  projectData.forEach(function (projObj) {
+    Project.all.push(new Project(projObj));
+  })
+}
+
+Project.fetchAll = function() {
+
+}
