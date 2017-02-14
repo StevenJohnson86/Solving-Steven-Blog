@@ -1,10 +1,10 @@
 'use strict';
 
-var projectView = {};
+let projectView = {};
 
 projectView.populateFilter = function () {
   $('.public-project').each(function(){
-    var title, optionTag;
+    let title, optionTag;
     title = $(this).find('h2').text();
     optionTag = `<option value="${title}">${title}</option>`;
 

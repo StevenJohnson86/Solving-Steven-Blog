@@ -18,8 +18,8 @@ Project.all = [];
 // }
 
 Project.prototype.toHtml = function () {
-  var source = $('#project-template').html();
-  var templateRender = Handlebars.compile(source);
+  let source = $('#project-template').html();
+  let templateRender = Handlebars.compile(source);
   return templateRender(this);
 }
 
@@ -31,4 +31,16 @@ Project.loadAll = function(projectData) {
 
 Project.fetchAll = function() {
 
+  if (localStorage.projectData) {
+    console.log('fetchAll if');
+    Project.loadAll(JSON.parse(localStorage.projectData));
+    projectView.initIndex();
+  } else {
+    console.log('fetchAll else');
+    $.getJSON('http://127.0.0.1:8080/data/blogData.json', function(data){
+      localStorage.projectData = JSON.stringify(data);
+      Project.loadAll(data);
+      projectView.initIndex();
+    })
+  }
 }
