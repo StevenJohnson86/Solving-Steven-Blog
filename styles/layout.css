@@ -4,6 +4,10 @@ img {
   max-height: 100%;
 }
 
+body {
+  min-width: 400px;
+}
+
 .public-project {
   height: 15em;
   min-width: 400px;
