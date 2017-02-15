@@ -69,10 +69,10 @@ Project.fetchAll = function() {
       method: 'GET',
       dataType: 'json',
       success: function(data){
-      localStorage.projectData = JSON.stringify(data);
+        localStorage.projectData = JSON.stringify(data);
       // console.log(headers);
-      Project.loadAll(data);
-      projectView.initIndex();
+        Project.loadAll(data);
+        projectView.initIndex();
       }
     });
   }
