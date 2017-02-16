@@ -30,50 +30,45 @@ Project.loadAll = function(projectData) {
 }
 
 Project.fetchAll = function() {
-//-------------trying to figure out etag *start*----------
- // let eTag = {};
- // $.ajax({
- //   url: 'http://127.0.0.1:8080/data/blogData.json',
- //   type: 'HEAD',
- //   success: function(){
- //     eTag =
- //   }
- // });
-  // $.ajax({
-  //   url: 'http://127.0.0.1:8080/data/blogData.json',
-  //   method: 'GET',
-  //   dataType: 'json',
-  //   ifModified: false,
-  //   complete: function(data, status){
-  //     if (status === 'success' && localStorage.projectData) {
-  //       console.log('fetchAll if - from req', status);
-  //       Project.loadAll(JSON.parse(localStorage.projectData));
-  //       projectView.initIndex();
-  //     } else {
-  //       console.log('fetchAll else - from LS', status);
-  //       localStorage.projectData = JSON.stringify(data);
-  //       Project.loadAll(data);
-  //       projectView.initIndex();
-  //     }
-  //   }
-  // })
-  //-----------figuring out etags *end*-------------------
-  if (localStorage.projectData) {
-    console.log('fetchAll if');
-    Project.loadAll(JSON.parse(localStorage.projectData));
-    projectView.initIndex();
-  } else {
-    console.log('fetchAll else');
+  //-------------trying to figure out etag *start*----------
+
+  // If there is project data in localStorage:
+  if (localStorage.projectData){
+    console.log('LS projectData exists');
+
     $.ajax({
-      url: './data/blogData.json',
       method: 'GET',
+      url: './data/blogData.json',
       dataType: 'json',
-      success: function(data){
-        localStorage.projectData = JSON.stringify(data);
-      // console.log(headers);
-        Project.loadAll(data);
-        projectView.initIndex();
+      complete: function (jqXHR){
+        let respETag = jqXHR.getResponseHeader('ETag');
+        console.log(respETag);
+
+        if (respETag === localStorage.dataETag){
+          console.log('jqXHR ETag = LS ETag, load from LS');
+          Project.loadAll(JSON.parse(localStorage.projectData));
+          projectView.initIndex();
+
+        } else {
+          console.log('jqXHR ETag != LS ETag, save ETag, getJSON');
+
+          localStorage.dataETag = respETag;
+          $.getJSON('./data/blogData.json', function(data){
+            localStorage.projectData = JSON.stringify(data);
+            Project.loadAll(data);
+            projectView.initIndex();
+          });
+        }
       }
+    });
+
+  } else {
+    console.log('no projectData in LS, getJSON');
+
+    $.getJSON('./data/blogData.json', function(data){
+      localStorage.projectData = JSON.stringify(data);
+      Project.loadAll(data);
+      projectView.initIndex();
     });
   }
 }
