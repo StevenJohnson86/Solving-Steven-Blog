@@ -1,0 +1,27 @@
+{
+  "name": "solving-steven-blog",
+  "version": "1.0.0",
+  "description": "A CF 301 project, build over the duration of the class.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StevenJohnson86/Solving-Steven-Blog.git"
+  },
+  "keywords": [
+    "blog",
+    "steven"
+  ],
+  "author": "Steven Johnson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StevenJohnson86/Solving-Steven-Blog/issues"
+  },
+  "homepage": "https://github.com/StevenJohnson86/Solving-Steven-Blog#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}

@@ -65,7 +65,7 @@ Project.fetchAll = function() {
   } else {
     console.log('fetchAll else');
     $.ajax({
-      url: 'http://127.0.0.1:8080/data/blogData.json',
+      url: './data/blogData.json',
       method: 'GET',
       dataType: 'json',
       success: function(data){
