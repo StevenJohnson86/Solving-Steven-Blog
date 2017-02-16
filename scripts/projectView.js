@@ -37,12 +37,13 @@ projectView.initIndex = function () {
   Project.all.forEach(function (p) {
     $('#projects-content').append(p.toHtml());
   });
+  projectView.populateFilter();
+  projectView.handleTitleFilter();
+  projectView.handleNav();
 }
 
-//-------------function calls-------------------------
+// //-------------function calls-------------------------
 // $(document).ready(function() {
 //   Project.fetchAll();
-//   projectView.populateFilter();
-//   projectView.handleTitleFilter();
-//   projectView.handleNav();
+//
 // });
