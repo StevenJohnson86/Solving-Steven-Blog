@@ -40,8 +40,9 @@ projectView.initIndex = function () {
 }
 
 //-------------function calls-------------------------
-$(document).ready(function() {
-  projectView.populateFilter();
-  projectView.handleTitleFilter();
-  projectView.handleNav();
-});
+// $(document).ready(function() {
+//   Project.fetchAll();
+//   projectView.populateFilter();
+//   projectView.handleTitleFilter();
+//   projectView.handleNav();
+// });
