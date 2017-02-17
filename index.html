@@ -18,30 +18,39 @@
       <nav class="main-nav">
         <span class="icon-menu"></span>
         <ul>
-          <li>Home</li>
-          <li>Blog</li>
-          <li>Projects</li>
-          <li>About</li>
+          <li class="tab" data-content="home">Home</li>
+          <li class="tab" data-content="blog">Blog</li>
+          <li class="tab" data-content="projects">Projects</li>
+          <li class="tab" data-content="about">About</li>
           <li class="icon-github"><a href="https://github.com/StevenJohnson86" target="_blank">My GitHub</a></li>
         </ul>
       </nav>
     </header>
 
-    <main class="content">
+    <main>
       <section id="home-content">
         <div class="description">
           <h2>Description of page here</h2>
         </div>
       </section>
 
+      <section id="blog-content">
+        <p>write blogs and put here</p>
+      </section>
+
       <section id="projects-content">
-        <div class="template">
+        <div class="template" data-title="">
           <a href="" target="_blank"><img src=""/>
           <div class="project-details">
             <h3>Title</h3>
             <p class="description">Project description</p>
             <p class="date">Date Published</p></a>
           </div>
+        </div>
+
+        <div>
+          <select id="title-filter">
+            <option value=""> -Find Project by Title- </option>
         </div>
       </section>
 
@@ -60,5 +69,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="scripts/projectData.js"></script>
     <script src="scripts/projects.js"></script>
+    <script src="scripts/projectView.js"></script>
   </body>
 </html>

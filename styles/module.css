@@ -14,6 +14,18 @@ header {
   background-color: lightgray;
 }
 
+#blog-content {
+  display: none;
+}
+
+#projects-content {
+  display: none;
+}
+
+#about-content {
+  display: none;
+}
+
 #projects-content img {
  float:left;
  height:100%;
