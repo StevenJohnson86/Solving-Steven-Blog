@@ -1,6 +1,6 @@
 header {
   background-color: lightgray;
-  height: 3em;
+  height: 4em;
 }
 
 
@@ -13,6 +13,14 @@ header {
   display: block;
   background-color: lightgray;
 }
+
+#projects-content img {
+ float:left;
+ height:100%;
+ width: 14em;
+}
+
+
 
 @media screen and (min-width: 600px) {
   .main-nav ul {
