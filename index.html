@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Days+One|Monda|Philosopher|Rajdhani" rel="stylesheet">
     <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/base.css">
     <link rel="stylesheet" href="/styles/layout.css">
@@ -12,11 +13,12 @@
     <title>Solving-Steven-Blog</title>
     <script id="project-template" type="text/x-handlebars-template">
       <div class="public-project" data-title="{{title}}">
-        <a href="{{path}}" target="_blank"><img src="{{img}}"/>
+        <img src="{{img}}"/>
         <div class="project-details">
-          <h3>{{title}}</h3>
+          <h2>{{title}}</h2>
           <p class="description">{{descript}}</p>
-          <p class="date">{{datePublished}}</p></a>
+          <a href="{{path}}" target="_blank">View Project</a>
+          <p class="date">{{datePublished}}</p>
         </div>
       </div>
     </script>
@@ -26,13 +28,13 @@
       <h1>Solving Steven</h1>
 
       <nav class="main-nav">
-        <span class="icon-menu"></span>
+        <span class="icon-menu"><p id="current-loc">Home</p></span>
         <ul>
           <li class="tab" data-content="home">Home</li>
           <li class="tab" data-content="blog">Blog</li>
           <li class="tab" data-content="projects">Projects</li>
           <li class="tab" data-content="about">About</li>
-          <li class="icon-github"><a href="https://github.com/StevenJohnson86" target="_blank">My GitHub</a></li>
+          <li><a class="icon-github" href="https://github.com/StevenJohnson86" target="_blank">My GitHub</a></li>
         </ul>
       </nav>
     </header>
@@ -71,8 +73,10 @@
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
-    <script src="scripts/projectData.js"></script>
     <script src="scripts/projects.js"></script>
     <script src="scripts/projectView.js"></script>
+    <script>
+    Project.fetchAll();
+    </script>
   </body>
 </html>

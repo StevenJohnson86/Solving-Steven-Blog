@@ -1,11 +1,11 @@
 'use strict';
 
-var projectView = {};
+let projectView = {};
 
 projectView.populateFilter = function () {
   $('.public-project').each(function(){
-    var title, optionTag;
-    title = $(this).find('h3').text();
+    let title, optionTag;
+    title = $(this).find('h2').text();
     optionTag = `<option value="${title}">${title}</option>`;
 
     if ($(`#title-filter option[value="${title}"]`).length === 0) {
@@ -28,14 +28,22 @@ projectView.handleTitleFilter = function() {
 projectView.handleNav = function () {
   $('.main-nav').on('click', '.tab', function() {
     $('section').hide();
-
+    $('#current-loc').text($(this).text());
     $('#' + $(this).data('content') + '-content').fadeIn();
   });
 };
 
-//-------------function calls-------------------------
-$(document).ready(function() {
+projectView.initIndex = function () {
+  Project.all.forEach(function (p) {
+    $('#projects-content').append(p.toHtml());
+  });
   projectView.populateFilter();
   projectView.handleTitleFilter();
   projectView.handleNav();
-});
+}
+
+// //-------------function calls-------------------------
+// $(document).ready(function() {
+//   Project.fetchAll();
+//
+// });
