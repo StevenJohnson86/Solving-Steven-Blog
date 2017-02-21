@@ -37,9 +37,15 @@
     Project.all.forEach(function (p) {
       $('#projects-content').append(p.toHtml());
     });
+
     projectView.populateFilter();
     projectView.handleTitleFilter();
     projectView.handleNav();
+    // --------------append stats--------------
+    let statWords = Project.descriptWords();
+    statWords.map((val)=> {
+      $('#stat').append(`<p>${val}</p>`)
+    });
   }
   module.projectView = projectView;
 })(window);

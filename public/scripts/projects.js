@@ -23,14 +23,27 @@ Project.prototype.toHtml = function () {
   return templateRender(this);
 }
 
-Project.loadAll = function(projectData) {
-  projectData.map(projObj =>
-    Project.all.push(new Project(projObj))
-  )
+Project.loadAll = (projectData) => {
+  Project.all = projectData.map(projObj => new Project(projObj));
 }
 
+Project.descriptWords = () => Project.all.map(project => project.descript.split(' ').length)
+                                         .reduce((totWords, val) => {
+                                           totWords + val;
+                                           totWords.push(val);
+                                           return totWords;
+                                         },[]);
+
+
+// Project.stat = () => {
+//   Project.all.map()
+//   return {
+//     title =
+//     words = Project.descriptWords().map(function...);
+//   }
+// }
+
 Project.fetchAll = function() {
-  //-------------trying to figure out etag *start*----------
 
   // If there is project data in localStorage:
   if (localStorage.projectData){
