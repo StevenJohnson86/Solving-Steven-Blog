@@ -2,11 +2,11 @@
 
 (function(module){
 
-const blogController = {};
+  const blogController = {};
 
-blogController.init = () => {
-
-}
+  blogController.init = () => {
+    blogView.index();
+  }
 
   module.blogController = blogController;
 })(window);

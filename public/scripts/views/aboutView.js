@@ -2,11 +2,12 @@
 
 (function(module){
 
-const aboutView = {};
+  const aboutView = {};
 
-aboutView.index = () => {
-
-}
+  aboutView.index = () => {
+    $('section').hide();
+    $('#about-content').show();
+  }
 
   module.aboutView = aboutView
 })(window);

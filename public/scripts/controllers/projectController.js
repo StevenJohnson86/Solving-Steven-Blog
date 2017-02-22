@@ -5,7 +5,7 @@
 const projectController = {};
 
 projectController.init = () => {
-
+  Project.fetchAll(projectView.index);
 }
 
   module.projectController = projectController;

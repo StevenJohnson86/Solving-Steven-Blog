@@ -2,11 +2,11 @@
 
 (function(module){
 
-const aboutController = {};
+  const aboutController = {};
 
-aboutController.init = () => {
-
-}
+  aboutController.init = () => {
+    aboutView.index();
+  }
 
   module.aboutController = aboutController;
 })(window);

@@ -2,11 +2,11 @@
 
 (function(module){
 
-const homeController = {};
+  const homeController = {};
 
-homeController.init = () => {
-
-}
+  homeController.init = () => {
+    homeView.index();
+  }
 
   module.homeController = homeController;
 })(window);

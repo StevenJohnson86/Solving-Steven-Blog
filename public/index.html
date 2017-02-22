@@ -73,12 +73,29 @@
         </div>
       </section>
     </main>
+    <!--=======================vendor libraries=======================================-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
-    <script src="scripts/projects.js"></script>
-    <script src="scripts/projectView.js"></script>
-    <script>
-      Project.fetchAll();
-    </script>
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+
+    <!-- =============================home resources=========================== -->
+    <script src="scripts/controllers/homeController.js"></script>
+    <script src="scripts/views/homeView.js"></script>
+
+    <!-- ================================blog resources========================= -->
+    <script src="scripts/controllers/blogController.js"></script>
+    <script src="scripts/views/blogView.js"></script>
+
+    <!-- ===============================project resources====================== -->
+    <script src="scripts/models/projects.js"></script>
+    <script src="scripts/controllers/projectController.js"></script>
+    <script src="scripts/views/projectView.js"></script>
+
+    <!-- ======================about resources==================== -->
+    <script src="scripts/controllers/aboutController.js"></script>
+    <script src="scripts/views/aboutView.js"></script>
+
+    <!-- =============other resources===================== -->
+    <script src="scripts/models/routes.js"></script>
   </body>
 </html>

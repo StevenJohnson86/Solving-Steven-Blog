@@ -2,11 +2,12 @@
 
 (function(module){
 
-const blogView = {};
+  const blogView = {};
 
-blogView.index = () => {
-
-}
+  blogView.index = () => {
+    $('section').hide();
+    $('#blog-content').show();
+  }
 
   module.blogView = blogView
 })(window);

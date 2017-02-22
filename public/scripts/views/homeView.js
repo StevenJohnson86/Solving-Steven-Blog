@@ -2,11 +2,12 @@
 
 (function(module){
 
-const homeView = {};
+  const homeView = {};
 
-homeView.index = () => {
-
-}
+  homeView.index = () => {
+    $('section').hide();
+    $('#home-content').show();
+  }
 
   module.homeView = homeView
 })(window);

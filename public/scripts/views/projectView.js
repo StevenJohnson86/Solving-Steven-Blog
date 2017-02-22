@@ -33,13 +33,15 @@
   //   });
   // };
 
-  projectView.initIndex = function () {
+  projectView.index = function () {
     Project.all.forEach(function (p) {
       $('#projects-content').append(p.toHtml());
     });
-
+    $('section').hide();
+    $('#projects-content').show();
     projectView.populateFilter();
     projectView.handleTitleFilter();
+
     // projectView.handleNav();
     // --------------append stats--------------
     let statWords = Project.descriptWords();
