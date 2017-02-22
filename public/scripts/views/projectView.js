@@ -34,6 +34,7 @@
   // };
 
   projectView.index = function () {
+    $('#projects-content').empty();
     Project.all.forEach(function (p) {
       $('#projects-content').append(p.toHtml());
     });
