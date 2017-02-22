@@ -45,6 +45,7 @@
     // projectView.handleNav();
     // --------------append stats--------------
     let statWords = Project.descriptWords();
+    $('#stat').empty();
     statWords.map((val)=> {
       $('#stat').append(`<p>${val}</p>`)
     });
