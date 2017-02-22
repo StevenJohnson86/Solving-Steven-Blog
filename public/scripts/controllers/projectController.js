@@ -2,11 +2,11 @@
 
 (function(module){
 
-const projectController = {};
+  const projectController = {};
 
-projectController.init = () => {
-  Project.fetchAll(projectView.index);
-}
+  projectController.init = () => {
+    Project.fetchAll(projectView.index);
+  }
 
   module.projectController = projectController;
 })(window);

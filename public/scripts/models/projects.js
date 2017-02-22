@@ -78,6 +78,6 @@
         projectView.index();
       });
     }
-}
- module.Project = Project;
+  }
+  module.Project = Project;
 })(window);
