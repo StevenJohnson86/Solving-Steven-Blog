@@ -25,13 +25,13 @@
     });
   }
 
-  projectView.handleNav = function () {
-    $('.main-nav').on('click', '.tab', function() {
-      $('section').hide();
-      $('#current-loc').text($(this).text());
-      $('#' + $(this).data('content') + '-content').fadeIn();
-    });
-  };
+  // projectView.handleNav = function () {
+  //   $('.main-nav').on('click', '.tab', function() {
+  //     $('section').hide();
+  //     $('#current-loc').text($(this).text());
+  //     $('#' + $(this).data('content') + '-content').fadeIn();
+  //   });
+  // };
 
   projectView.initIndex = function () {
     Project.all.forEach(function (p) {
@@ -40,7 +40,7 @@
 
     projectView.populateFilter();
     projectView.handleTitleFilter();
-    projectView.handleNav();
+    // projectView.handleNav();
     // --------------append stats--------------
     let statWords = Project.descriptWords();
     statWords.map((val)=> {
