@@ -9,7 +9,8 @@
   ghRepos.request = function(callback){
     $.get('/github/user/repos')
       .then(function(data){
-        ghRepos.all = data;
+        data.forEach(repo => ghRepos.all.push(repo));
+        // ghRepos.all = data;
       },
     function(err){
       console.error('github repo request, error code: ', err);
@@ -18,10 +19,10 @@
   }
 
   ghRepos.with = function(prop) {
-    ghRepos.all.filter(function(repo){
-      repo[prop];
+    return ghRepos.all.filter(function(repo){
+      return repo[prop];
     })
   }
 
-
+  module.ghRepos = ghRepos;
 })(window);

@@ -45,7 +45,7 @@
   projectView.listRepos = function () {
     $('#projects-content').append('<h2>Here is a list of all my repos</h2>');
     let repoTemplate = Handlebars.compile($('#repo-template').html());
-    $('#projects-content').append(with('name').map(repoTemplate));
+    $('#projects-content').append(ghRepos.with('name').map(repoTemplate));
     //RENDER REPOS FROM REQUEST
   }
 

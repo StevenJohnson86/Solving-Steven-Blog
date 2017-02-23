@@ -90,7 +90,13 @@ header {
   vertical-align: bottom;
 }
 
+ul.repo {
+  margin: 2em;
+}
 
+.repo-title {
+  font-size: 1.2em;
+}
 /*----------about styles----------------*/
 
 #about-content {
