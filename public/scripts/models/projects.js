@@ -21,8 +21,7 @@
   // }
 
   Project.prototype.toHtml = function () {
-    let source = $('#project-template').html();
-    let templateRender = Handlebars.compile(source);
+    let templateRender = Handlebars.compile($('#project-template').html());
     return templateRender(this);
   }
 
@@ -60,7 +59,7 @@
             console.log('jqXHR ETag != LS ETag, save ETag, getJSON');
 
             localStorage.dataETag = respETag;
-            $.getJSON('./data/blogData.json', function(data){
+            $.getJSON('../../data/blogData.json', function(data){
               localStorage.projectData = JSON.stringify(data);
               Project.loadAll(data);
               projectView.index();
@@ -72,7 +71,7 @@
     } else {
       console.log('no projectData in LS, getJSON');
 
-      $.getJSON('./data/blogData.json', function(data){
+      $.getJSON('../../data/blogData.json', function(data){
         localStorage.projectData = JSON.stringify(data);
         Project.loadAll(data);
         projectView.index();

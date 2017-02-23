@@ -1,6 +1,6 @@
 
 const express = require('express');
-
+const requestProxy = require('express-request-proxy');
 const app = express();
 
 const PORT = process.env.PORT || 5000;
@@ -19,6 +19,15 @@ app.get('/projects', function(request, response){
 app.get('/about', function(request, response){
   response.sendFile('index.html', {root: './public'});
 });
+
+app.get('/github/*', githubProxy);
+
+function githubProxy(request, response){
+  (requestProxy({
+    url: `https://api.github.com/${request.params[0]}`,
+    headers: {Authorization: `token ${process.env.GITHUB_TOKEN}`}
+  }))(request, response);
+}
 
 
 app.listen(PORT, function(){

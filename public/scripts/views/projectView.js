@@ -25,14 +25,6 @@
     });
   }
 
-  // projectView.handleNav = function () {
-  //   $('.main-nav').on('click', '.tab', function() {
-  //     $('section').hide();
-  //     $('#current-loc').text($(this).text());
-  //     $('#' + $(this).data('content') + '-content').fadeIn();
-  //   });
-  // };
-
   projectView.index = function () {
     $('#projects-content').empty();
     Project.all.forEach(function (p) {
@@ -43,13 +35,20 @@
     projectView.populateFilter();
     projectView.handleTitleFilter();
 
-    // projectView.handleNav();
     // --------------append stats--------------
-    let statWords = Project.descriptWords();
-    $('#stat').empty();
-    statWords.map((val)=> {
-      $('#stat').append(`<p>${val}</p>`)
-    });
+    // let statWords = Project.descriptWords();
+    // statWords.map((val)=> {
+    //   $('#projects-content').append(`<p>${val}</p>`)
+    // });
   }
+
+  projectView.listRepos = function () {
+    $('#projects-content').append('<h2>Here is a list of all my repos</h2>');
+    let repoTemplate = Handlebars.compile($('#repo-template').html());
+    $('#projects-content').append(with('name').map(repoTemplate));
+    //RENDER REPOS FROM REQUEST
+  }
+
+
   module.projectView = projectView;
 })(window);
