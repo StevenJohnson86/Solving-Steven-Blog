@@ -9,6 +9,7 @@
   ghRepos.request = function(callback){
     $.get('/github/user/repos')
       .then(function(data){
+        ghRepos.all = [];
         data.forEach(repo => ghRepos.all.push(repo));
         // ghRepos.all = data;
       },

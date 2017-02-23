@@ -36,7 +36,7 @@
                                              return totWords;
                                            },[]);
 
-  Project.fetchAll = function() {
+  Project.fetchAll = function(callback) {
 
     // If there is project data in localStorage:
     if (localStorage.projectData){
@@ -53,7 +53,7 @@
           if (respETag === localStorage.dataETag){
             console.log('jqXHR ETag = LS ETag, load from LS');
             Project.loadAll(JSON.parse(localStorage.projectData));
-            projectView.index();
+            callback();
 
           } else {
             console.log('jqXHR ETag != LS ETag, save ETag, getJSON');
@@ -62,7 +62,7 @@
             $.getJSON('../../data/blogData.json', function(data){
               localStorage.projectData = JSON.stringify(data);
               Project.loadAll(data);
-              projectView.index();
+              callback();
             });
           }
         }
@@ -74,9 +74,10 @@
       $.getJSON('../../data/blogData.json', function(data){
         localStorage.projectData = JSON.stringify(data);
         Project.loadAll(data);
-        projectView.index();
+        callback();
       });
     }
+    // callback();
   }
   module.Project = Project;
 })(window);

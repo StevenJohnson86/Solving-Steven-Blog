@@ -26,9 +26,9 @@
   }
 
   projectView.index = function () {
-    $('#projects-content').empty();
+    $('#projects-showcase').empty();
     Project.all.forEach(function (p) {
-      $('#projects-content').append(p.toHtml());
+      $('#projects-showcase').append(p.toHtml());
     });
     $('section').hide();
     $('#projects-content').show();
@@ -43,9 +43,10 @@
   }
 
   projectView.listRepos = function () {
-    $('#projects-content').append('<h2>Here is a list of all my repos</h2>');
+    $('#repo-showcase').empty();
+    $('#repo-showcase').append('<h2>Here is a list of all my repos</h2>');
     let repoTemplate = Handlebars.compile($('#repo-template').html());
-    $('#projects-content').append(ghRepos.with('name').map(repoTemplate));
+    $('#repo-showcase').append(ghRepos.with('name').map(repoTemplate));
     //RENDER REPOS FROM REQUEST
   }
 
