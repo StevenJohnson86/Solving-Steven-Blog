@@ -35,6 +35,11 @@
     projectView.populateFilter();
     projectView.handleTitleFilter();
 
+    projectView.showProject = function(ctx) {
+      console.log(ctx);
+      // ctx.params.title = 
+    }
+
     // --------------append stats--------------
     // let statWords = Project.descriptWords();
     // statWords.map((val)=> {

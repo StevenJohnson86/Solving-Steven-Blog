@@ -86,6 +86,11 @@ header {
   margin: 0 auto;
 }
 
+a.proj-display-route {
+  border: none;
+  padding: 0;
+}
+
 .project-details p.date {
   vertical-align: bottom;
 }
